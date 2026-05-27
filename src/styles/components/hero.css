@@ -1,0 +1,154 @@
+@layer components {
+  .hero {
+      @apply 
+      relative 
+      overflow-hidden 
+      flex 
+      items-center;
+      /* min-height: 100vh; */
+      background-color: var(--color-primario);    
+    }
+    
+    /* 
+      .hero-contenedor {
+        @apply relative z-10 w-full mx-auto mt-15 px-6 lg:px-16;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+      } */
+
+      /* .hero-contenedor {
+    @apply relative z-10 w-full mx-auto mt-15 px-6 lg:px-16 max-w-7xl;
+    display: flex;
+    align-items: center;
+    } */
+/* 
+    .hero-contenedor {
+        @apply relative z-10 w-full mx-auto mt-15 px-6 lg:px-16 max-w-7xl;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    } */
+
+    .hero-contenedor {
+        @apply relative z-10 w-full mx-auto mt-15 px-6 lg:px-16 max-w-7xl;
+        display: flex;
+        align-items: center;
+        /* gap: 2rem; Agregá espacio entre texto e imagen */
+        /* justify-content: space-between;  */
+    }
+
+  /* .hero-imagen {
+    @apply relative z-0 w-1/2 ml-[-10%]; */
+    /* La imagen queda detrás en z-index */
+    /* ml-[-10%] mueve la imagen a la izquierda */
+  /* }  */
+
+  .hero-imagen {
+    /* @apply relative z-0 w-3/4; Cambiá w-1/2 por w-3/4 para agrandar la imagen */
+
+    /* Sacá ml-[-10%] */
+    @apply relative z-0 w-full max-w-3xl ml-[-10%]; /* Cambiá w-3/4 por w-full max-w-2xl*/ /* w-1/2*/
+    /* @apply relative z-0 ml-[-10%];  */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+
+  .hero-imagen img {
+    @apply 
+    object-contain
+    w-full
+    ;
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 100%
+    );
+  }
+
+  .hero-texto {
+    @apply relative z-20 ;
+    /* max-width: 1100px; */
+    max-width: 600px; /* Reducí el ancho máximo para darle espacio a la imagen */
+    flex-shrink: 1; /* Permite que el texto se ajuste */
+
+    /* Margen negativo para que el texto se superponga a la imagen */
+
+    /* transform: translateX(80px); */
+  }
+
+
+
+  /* .hero-texto h1 {
+    @apply 
+    leading-none
+    uppercase
+    tracking-widest
+    md:text-7xl
+    font-bold;
+    color: var(--color-texto-brillo);
+    width: max-content;
+  } */
+
+    .hero-texto h1 {
+        @apply 
+        leading-none
+        uppercase
+        tracking-widest
+        md:text-7xl
+        font-bold;
+        color: var(--color-texto-brillo);
+        width: 100%; /* Cambiá width: max-content por 100% */
+        width: max-content;
+    }
+
+  .hero-destacar {    
+    color: var(--color-acento);
+  }
+  
+  .hero-texto-destacar {
+    @apply mt-6    
+    text-xl md:text-4xl
+    leading-relaxed;
+    color: var(--color-texto);
+  }
+
+  .hero-accion {
+    @apply flex sm:flex-row items-center gap-4 mt-12;
+  }
+
+  /* Mobile: imagen detrás del texto */
+  @media (max-width: 768px) {
+    .hero-contenedor {
+      @apply flex-col;
+      position: relative;
+    }
+    
+    .hero-imagen {
+      @apply absolute z-0 w-full opacity-80;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .hero-texto {
+      @apply relative z-20 text-center;
+      margin-left: 0;
+      padding: 2rem 1rem;
+    }
+
+    .hero-texto h1 {        
+        width: 100%;
+    }
+  }
+}

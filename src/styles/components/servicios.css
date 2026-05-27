@@ -1,0 +1,99 @@
+@layer components {
+  .servicios {
+    @apply py-20 px-6 lg:px-16;
+    background-color: var(--color-fondo);
+  }
+
+  .servicios-contenedor {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Header con badge */
+  .servicios-header {
+    @apply text-center mb-16;
+  }
+
+  .servicios-badge {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 mb-4;
+    background-color: rgba(var(--color-acento-rgb), 0.1);
+    border: 1px solid rgba(var(--color-acento-rgb), 0.3);
+  }
+
+  .servicios-badge-icon {
+    @apply w-5 h-5;
+    color: var(--color-acento);
+  }
+
+  .servicios-badge span {
+    @apply font-semibold tracking-widest;
+    color: var(--color-acento);
+  }
+
+  .servicios-titulo {
+    @apply text-4xl md:text-5xl font-bold tracking-wider;
+    color: var(--color-texto-brillo);
+  }
+
+  .servicios-subtitulo {
+    @apply text-xl mt-4 max-w-2xl mx-auto tracking-wider;
+    color: var(--color-texto);
+  }
+
+  /* Grid */
+  .servicios-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Card */
+  .servicio-card {
+    @apply p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2;
+    background-color: var(--color-secundario);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .servicio-card:hover {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-acento);
+  }
+
+  /* Ícono */
+  .servicio-icono-wrapper {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center mb-4;
+    background-color: rgba(var(--color-acento-rgb), 0.1);
+  }
+
+  .servicio-icono {
+    @apply w-6 h-6;
+    color: var(--color-acento);
+  }
+
+  .servicio-titulo {
+    @apply text-xl font-bold mb-2 tracking-wider;
+    color: var(--color-acento);
+  }
+
+  .servicio-descripcion {
+    @apply text-base leading-relaxed mb-4 pb-4;
+    color: var(--color-texto);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Items */
+  .servicio-items {
+    @apply mt-2;
+  }
+
+  .servicio-lista {
+    @apply space-y-2;
+  }
+
+  .servicio-lista li {
+    @apply flex items-start gap-2 text-sm;
+    color: var(--color-texto);
+  }
+
+  .servicio-bullet {
+    @apply w-1.5 h-1.5 rounded-full shrink-0 mt-1.5;
+    background-color: var(--color-acento);
+  }
+}

@@ -1,0 +1,27 @@
+@layer {
+    :root {
+        --font-size: 16px;
+
+        /* Definimos el "valor" del color sin la función rgb(), para poder aplicar transparencia en navbar */        
+        --color-primario-rgb: 15, 15, 15;    /* #0F0F0F */
+        
+        --color-primario: #0F0F0F;
+        --color-primario-apagado: #1a1a1a;
+        --color-secundario: #333333;
+        --color-terciario: #999999;
+        --color-texto: #F5F5F5;
+        --color-texto-brillo: #FFFFFF;
+        --color-acento: #E63946;
+        --color-acento-brillo: #D4183D;
+
+        --borde: rgba(255, 255, 255, 0.1);
+        --borde-rgb: 255, 255, 255;
+
+ 
+        --color-acento-rgb: 230, 57, 70; 
+        --color-secundario-rgb: 17, 17, 17;
+
+    }
+
+
+}
