@@ -33,6 +33,7 @@ function AppContent() {
     return localStorage.getItem("isAccessible") === "true";
   });
 
+  
   useEffect(() => {
     localStorage.setItem("isAccessible", isAccessible);
   }, [isAccessible]);
@@ -57,6 +58,15 @@ function AppContent() {
     }
   }, [location]);
 
+  // Estado para el paquete seleccionado
+  const [paqueteSeleccionado, setPaqueteSeleccionado] = useState(null);
+  
+  // Función para seleccionar paquete
+  const handleSeleccionarPaquete = (titulo) => {
+    console.log("Paquete seleccionado:", titulo); // Para debug
+    setPaqueteSeleccionado(titulo);
+  };
+
   return (
     <div className="app-container">
       {/* 2. Aplico la clase dinámicamente     */}
@@ -75,10 +85,13 @@ function AppContent() {
               <main className="main-content" style={{ marginTop: "80px" }}>
                 <Hero />
                 <Promocion />
-                <Paquetes />
-                <ServicioPremium />
-                <Servicios />
-                <Contacto />                
+                {/* <Paquetes /> */}
+                {/* console.log("handleSeleccionarPaquete existe:", typeof handleSeleccionarPaquete); */}                
+                <Paquetes onSeleccionarPaquete={handleSeleccionarPaquete} />
+                <ServicioPremium onSeleccionarPaquete={handleSeleccionarPaquete} />
+                <Servicios />                
+                {/* <Contacto paqueteSeleccionado={paqueteSeleccionado} />                   */}
+                <Contacto />
               </main>
             }
           />

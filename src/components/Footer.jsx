@@ -1,10 +1,11 @@
 import React from 'react';
-//import { Heart, Instagram, Music2, /* Facebook,*/ } from "lucide-react";
-//import { Heart, Instagram, MapPin, Clock, Phone, MessageCircle } from "lucide-react";
 import { FaHeart, FaInstagram, FaMapMarkerAlt, FaClock, FaWhatsapp, FaFacebook, FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { generarLinkWhatsApp } from "../utils/whatsapp";
 
-export default function Footer() {
+export default function Footer({paqueteSeleccionado = null }) {
+  const urlWhatsapp = generarLinkWhatsApp(paqueteSeleccionado);
+
   return (
     <footer className="footer-principal">
       <div className="footer-contenedor">
@@ -65,21 +66,23 @@ export default function Footer() {
             <h4 className="footer-h4">Contacto</h4>
             <div className="footer-datos">
                 <div className="footer-contacto-item">
-                    <FaWhatsapp size={16} className="footer-contacto-icono" />
-                    <a href="https://wa.me/5492284234077" target="_blank" rel="noopener noreferrer">
-                        WhatsApp 2284-234077
-                    </a>
+                  {/* WhatsApp */}
+                  <FaWhatsapp size={20} className="footer-contacto-icono" />
+                  <a href={urlWhatsapp} target="_blank" rel="noopener noreferrer">
+                    WhatsApp 2284-234077
+                  </a>                    
                 </div>
                 <div className="footer-contacto-item">
-                    <FaClock size={16} className="footer-contacto-icono" />
-                    <div>
-                        Lun a Vie 9:00 - 17:00<br />
-                        Sábados: 9:00 - 13:00
-                    </div>
+                  <FaClock size={18} className="footer-contacto-icono" />
+                  <div>
+                    Lun a Vie: 9:00 - 17:00<br />
+                    Sábados: 9:00 - 13:00
+                  </div>
                 </div>
+
                 <div className="footer-contacto-item">
-                    <FaMapMarkerAlt size={16} className="footer-contacto-icono" />
-                    <span>Olavarría, Buenos Aires, Argentina</span>
+                  <FaMapMarkerAlt size={18} className="footer-contacto-icono" />
+                  <span>Olavarría, Buenos Aires, Argentina</span>
                 </div>
             </div>
         </div>

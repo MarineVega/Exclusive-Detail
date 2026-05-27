@@ -1,16 +1,24 @@
 import { paquetes } from "../data/paquetes";
 import { CheckCircle2, Gem } from "lucide-react";
 import { useState } from "react";
-import Contacto from "./Contacto";
+import { generarLinkWhatsApp } from "../utils/whatsapp";
 
-export default function Paquetes() {
-    const [paqueteSeleccionado, setPaqueteSeleccionado] = useState(null);
+// import Contacto from "./Contacto";
+
+export default function Paquetes({ onSeleccionarPaquete }) {
+  //console.log("onSeleccionarPaquete en Paquetes:", typeof onSeleccionarPaquete);
+  //const [paqueteSeleccionado, setPaqueteSeleccionado] = useState(null);    
 
   // Cuando se clickea "Solicitar", guardo el paquete
   const handleSolicitar = (titulo) => {
-    setPaqueteSeleccionado(titulo);
+    onSeleccionarPaquete(titulo);   // Llamo a la función que viene de App.jsx
+
+    // Abre WhatsApp directamente
+    const url = generarLinkWhatsApp("paquete", titulo);
+    window.open(url, "_blank");
+
     // Scroll a contacto
-    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+    //document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -97,7 +105,7 @@ export default function Paquetes() {
 
       </div>
       {/* Contacto recibe el paquete seleccionado */}
-      <Contacto paqueteSeleccionado={paqueteSeleccionado} />
+      {/* <Contacto paqueteSeleccionado={paqueteSeleccionado} /> */}
 
     </section>
   );
