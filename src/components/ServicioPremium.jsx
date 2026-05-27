@@ -1,7 +1,7 @@
 import { contacto } from "../data/contacto";
 import { servicioPremium } from "../data/servicioPremium";
 import { CheckCircle2, Star, Sparkles } from "lucide-react";
-import { generarLinkWhatsApp } from "../utils/whatsApp";
+import { generarLinkWhatsApp } from "../utils/whatsapp";
 
 export default function ServicioPremium() {    
     const urlWhatsapp = generarLinkWhatsApp("premium");
