@@ -10,7 +10,6 @@
         /* Usamos la variable RGB + la opacidad deseada */
         /* esto no sirve, porque lo muestra transparente */
         /*background-color: rgba(var(--color-fondo-rgb), 0.7);   */  /* el 2º parámetro es para aplicar transparencia */
-        
         background-color: var(--color-navbar);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);    
